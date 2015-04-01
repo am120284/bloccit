@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'advertisements/index'
+
+  get 'advertisements/show'
+
   resources :posts
+  resources :advertisements
   get 'about' => 'welcome#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
