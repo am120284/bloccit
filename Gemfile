@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+
+gem 'devise'
+
+gem 'bootstrap-sass'
+
 
  group :production do
    gem 'pg'
