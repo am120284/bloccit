@@ -1,11 +1,5 @@
 class PostsController < ApplicationController
-   before_action :flash_attack
-
-  protected
-
-  def flash_attack
-    
-  end
+   
 
 
   def index
@@ -13,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-  	#@post = Post.find(params[:id])
+   #@post = Post.find(params[:id])
     @post = Post.find(params[:id])
   end
 
