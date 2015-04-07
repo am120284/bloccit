@@ -1,4 +1,13 @@
 class PostsController < ApplicationController
+   before_action :flash_attack
+
+  protected
+
+  def flash_attack
+    
+  end
+
+
   def index
   	@posts = Post.all
   end
