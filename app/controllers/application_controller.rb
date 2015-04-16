@@ -1,17 +1,15 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  include Pundit
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  skip_before_action :flash_attack, only:[:index, :new]
-
-
-  def flash_attack
-     flash[:notice] = "FLASH ATTACK!!"
+  rescue_from Pundit::NotAuthorizedError do |exception|
+    redirect_to root_url, alert: exception.message
   end
- 
+
    protected
  
    def configure_permitted_parameters
