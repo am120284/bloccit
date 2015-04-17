@@ -7,14 +7,16 @@ class PostPolicy < ApplicationPolicy
          
       elsif user.member?
       	scope.where(:user_id => @user.id)
+
       else
         scope.where(:published => true)
+       
       end
     end
   end
 
   def update?
-    user.admin? or not @posts.published?
+    user.admin? #or not @posts.published?
   end
 
   def index?
