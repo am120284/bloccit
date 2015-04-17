@@ -14,7 +14,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? or not @posts.published?
+    user.admin?# or not @posts.published?
   end
 
   def index?
