@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get 'advertisements/index'
-
-  get 'advertisements/show'
-
-  resources :posts
   
-  resources :advertisements
+  resources :topics do
+    resources :posts, except: [:index]
+  end
+  
   get 'about' => 'welcome#about'
 
   # The priority is based upon order of creation: first created -> highest priority.

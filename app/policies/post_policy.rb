@@ -16,7 +16,11 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
+<<<<<<< HEAD
     user.admin? #or not @posts.published?
+=======
+    user.admin?# or not @posts.published?
+>>>>>>> origin/master
   end
 
   def index?
