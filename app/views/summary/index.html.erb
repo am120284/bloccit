@@ -1,0 +1,20 @@
+<h1>Post Summaries</h1>
+
+<div class="row">
+  <div class="col-md-8">
+  <!--This is were the show posts summaries link will go
+  It should link to the summaries index.html.erb page-->
+  <%= link_to "New Summary", new_summary_path, class: 'btn btn-success' %>
+  </div>
+   <div class="row-md-8">
+  <!--This is were the show posts summaries link will go
+  It should link to the summaries index.html.erb page-->
+  <%= link_to "Back to Topics", topics_path, class: 'btn btn-success' %>
+  </div>
+</div>
+
+<div class="col">
+  <% @summary.each do |s|%>
+   <p><%= s.description %></p>
+  <% end %>
+</div>

@@ -14,16 +14,24 @@
            <%= link_to post.title,[@topic, post] %>
          </h4>
            <small>
-           submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br>
-           <%= post.comments.count %> Comments
+             submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br>
+             <%= post.comments.count %> Comments
            </small>
        </div>
       </div>
     <% end %>
    </div>
    <div class="col-md-4">
-     <% if policy(Post.new).create? %>
+     <% if policy(Post.new).create? %> <!--if policy allows user to create new Posts then...-->
        <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
      <% end %>
    </div>
+
+   <br><br>
+   <div class="col-md-4">
+     <!--This is were the show posts summaries link will go
+     It should link to the summaries index.html.erb page-->
+     <%= link_to "Post Summaries", summary_index_path, class: 'btn btn-success' %>
+  </div>
+
  </div>              	

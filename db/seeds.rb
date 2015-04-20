@@ -29,16 +29,28 @@ require 'faker'
  end
  topics = Topic.all
 
+
 # Create Posts
 50.times do
   Post.create!(
     user:   users.sample,
-    topic: topics.sample,
+    topic:  topics.sample,
     title:  Faker::Lorem.sentence,
     body:   Faker::Lorem.paragraph
   )
 end
 posts = Post.all
+
+ #Add Post Summary
+
+15.times do
+  Summary.create!(
+      post: posts.sample,
+      description: Faker::Lorem.paragraph
+  )
+end
+summary = Summary.all
+
 
 # Create Comments
 100.times do
@@ -79,6 +91,7 @@ end
  member.save!
 
 puts "Seed finished"
+puts "#{Summary.count} Summaries created"
 puts "#{User.count} users created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
