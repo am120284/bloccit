@@ -81,6 +81,7 @@ end
  moderator.skip_confirmation!
  moderator.save!
  
+=begin
  # Create a member
  member = User.new(
    name:     'Adrian Munoz',
@@ -89,6 +90,7 @@ end
  )
  member.skip_confirmation!
  member.save!
+=end
 
 puts "Seed finished"
 puts "#{Summary.count} Summaries created"
