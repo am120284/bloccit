@@ -60,37 +60,7 @@ summary = Summary.all
     body: Faker::Lorem.paragraph
   )
 end
-=begin
- # Create an admin user
- admin = User.new(
-   name:     'Admin User',
-   email:    'admin@example.com',
-   password: 'helloworld',
-   role:     'admin'
- )
- admin.skip_confirmation!
- admin.save!
- 
- # Create a moderator
- moderator = User.new(
-   name:     'Moderator User',
-   email:    'moderator@example.com',
-   password: 'helloworld',
-   role:     'moderator'
- )
- moderator.skip_confirmation!
- moderator.save!
- 
 
- # Create a member
- member = User.new(
-   name:     'Adrian Munoz',
-   email:    'am120284@gmail.com',
-   password: 'michelle1'
- )
- member.skip_confirmation!
- member.save!
-=end
 
 puts "Seed finished"
 puts "#{Summary.count} Summaries created"
