@@ -60,6 +60,11 @@ summary = Summary.all
     body: Faker::Lorem.paragraph
   )
 end
+  
+rescue Exception => e
+  
+end
+
 
  # Create an admin user
  admin = User.new(
@@ -81,6 +86,7 @@ end
  moderator.skip_confirmation!
  moderator.save!
  
+ #Since we are creating a new user on the app itself this is no longer needed
 =begin
  # Create a member
  member = User.new(
