@@ -39,7 +39,6 @@
           <%= f.text_field :name, class: 'form-control', placeholder: "Enter name", autofocus: true %>
         </div>
 
-         <!--------------------------------------------Avatar------------------------------------------------------>
 
          <% if current_user.avatar? %>
            <div class="form-group">
@@ -54,7 +53,7 @@
            <%= f.hidden_field :avatar_cache %>
          </div>
 
-  <!--------------------------------------------Avatar------------------------------------------------------>
+ 
 
         <div class="form-group">
           <%= f.submit "Update", class: 'btn btn-success' %>
