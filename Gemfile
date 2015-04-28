@@ -11,9 +11,16 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'pundit'
 gem 'redcarpet'
+
+  gem 'carrierwave'
+  gem 'mini_magick'
+
+  gem 'fog'
+
  group :production do
    gem 'pg'
    gem 'rails_12factor'
+
    
  end
  
@@ -67,10 +74,7 @@ group :development, :test do
   
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
-  gem 'carrierwave'
-  gem 'mini_magick'
 
-  gem 'fog'
 
 end
 
