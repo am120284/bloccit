@@ -11,15 +11,14 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 SENDGRID_PASSWORD: michelle1
-SENDGRID_USERNAME: am120284@gmail.com
+SENDGRID_USERNAME: adrian@kraferd.com
 
-AWS_ACCESS_KEY_ID: AKIAIGQJUWYBLIPGAGWA
-AWS_SECRET_ACCESS_KEY: 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
-
+AWS_ACCESS_KEY_ID: AAKIAJM53O6OIGYHIDD5Q
+AWS_SECRET_ACCESS_KEY: pmP2DCz8ieS4BzyYIy0Xi3ba++BmZbaYCu55f1ik
 development: 
-  AWS_BUCKET: bloccit2015-development
+  AWS_BUCKET: bloccit2015-development2
 production:
-  AWS_BUCKET: bloccit2015-production
+  AWS_BUCKET: bloccit2015-production2
 
 #SECRET_KEY_BASE
 ###############
