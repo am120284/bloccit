@@ -66,7 +66,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   if Rails.env.development? || Rails.env.production?
-   #ActionMailer::Base.delivery_method = :smtp
+   ActionMailer::Base.delivery_method = :smtp
 
    ActionMailer::Base.perform_deliveries = true
    ActionMailer::Base.raise_delivery_errors = false
