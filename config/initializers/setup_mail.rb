@@ -1,11 +1,13 @@
+=begin
 if Rails.env.development? || Rails.env.production?
-   ActionMailer::Base.delivery_method = :smtp
+   #ActionMailer::Base.delivery_method = :smtp
 
    ActionMailer::Base.perform_deliveries = true
    ActionMailer::Base.raise_delivery_errors = false
    ActionMailer::Base.default :charset => "utf-8"
 
-   ActionMailer::Base.smtp_settings = {
+   ActionMailer::Base.smtp_settings = 
+   {
     address:        'smtp.sendgrid.net',
     port:           '587',
     authentication: :plain,
@@ -15,3 +17,4 @@ if Rails.env.development? || Rails.env.production?
     enable_starttls_auto: true
     }
 end
+=end
