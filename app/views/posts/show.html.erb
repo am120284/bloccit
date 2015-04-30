@@ -15,10 +15,8 @@
      <% if policy(@post).edit? %>
        <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
      <% end %>
-   </div>
-
-  <small>
+     <div>
      <%= image_tag(@post.image.profile.url) %>
-  </small>
-
+     </div>
+   </div>
  </div>
