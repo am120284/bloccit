@@ -36,7 +36,7 @@
      <%= link_to "Post Summaries", summary_index_path, class: 'btn btn-success' %>
   </div>
     <div>
-     <%= image_tag(post.user.image.tiny.url) %>
+     <%= image_tag(@post.image_url) %>
     </div>
      
 
