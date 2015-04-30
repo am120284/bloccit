@@ -9,10 +9,12 @@
        <%= @post.user.name %>
      </small>
 
-     <p><%= @post.markdown_body %></p>
-      <div>
-     <%= image_tag(@post.image.url) %>
-     </div>
+     <p>
+     <%= @post.markdown_body %>
+     
+     <%= image_tag(@post.image.profile.url) %>
+     </p>
+
    </div>  
    <div class="col-md-4">
      <% if policy(@post).edit? %>
