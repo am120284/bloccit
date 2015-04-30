@@ -16,4 +16,9 @@
        <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
      <% end %>
    </div>
+
+  <small>
+     <%= image_tag(@post.image.tiny.url) %>
+  </small>
+
  </div>
