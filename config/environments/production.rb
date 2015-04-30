@@ -83,6 +83,8 @@ Rails.application.configure do
     enable_starttls_auto: true
     }
 end
+
+
   
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
