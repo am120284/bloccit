@@ -41,4 +41,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: 'localhost:3000' }
   config.action_mailer.delivery_method     = :smtp
   config.action_mailer.perform_deliveries  = true
+
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 end

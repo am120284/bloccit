@@ -74,6 +74,9 @@ group :development, :test do
   
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+  gem 'binding_of_caller', '~> 0.7.2'
+
+  gem 'better_errors', '~> 2.1.1'
 
 
 end

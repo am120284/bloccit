@@ -14,8 +14,18 @@
      
      <%= image_tag(@post.image.profile.url) %>
      </p>
-     <%= @comments %>
-   </div>  
+
+     <h3><%= @comments.count %> Comments</h3>
+
+     <%= render @comments %>
+
+     <% if policy(Comment.new).create? %>
+         <h4>New Comment</h4>
+         <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+     <% end %>
+
+   </div>
+
    <div class="col-md-4">
      <% if policy(@post).edit? %>
        <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
@@ -23,3 +33,5 @@
     
    </div>
  </div>
+
+
