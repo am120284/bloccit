@@ -4,7 +4,7 @@ class TopicPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present? && (user.admin? || user.member?)
+    user.present? && user.admin?
   end
 
   def update?
@@ -13,6 +13,10 @@ class TopicPolicy < ApplicationPolicy
 
   def edit?
   	create?
+  end
+
+  def destroy?
+    update?
   end
 
 end

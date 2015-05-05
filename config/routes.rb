@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   
   resources :topics do
    resources :posts, except: [:index] do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
     end
   end
   
   get 'about' => 'welcome#about'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of cre ation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   #
   # You can have the root of your site routed with "root"
