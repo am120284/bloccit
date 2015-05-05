@@ -24,7 +24,7 @@ require 'faker'
  50.times do
    Topic.create!(
      name:         Faker::Lorem.sentence,
-     description:  Faker::Lorem.paragraprah
+     description:  Faker::Lorem.paragraph
    )
  end
  topics = Topic.all
