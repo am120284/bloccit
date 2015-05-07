@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
 
-  get 'comments/create'
+    get 'comments/create'
 
-  resources :summary
-  devise_for :users
-  resources :users, only: [:update]
-  
-  resources :topics do
-   resources :posts, except: [:index] do
-    resources :comments, only: [:create, :destroy]
+    resources :summary
+    devise_for :users
+    resources :users, only: [:update]
+
+    resources :topics do
+      resources :posts, except: [:index]
     end
-  end
+
+    resources :posts, only: [] do
+      resources :comments, only: [:create, :destroy]
+    end
   
   get 'about' => 'welcome#about'
 
-  # The priority is based upon order of cre ation: first created -> highest priority.
+  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   #
   # You can have the root of your site routed with "root"
