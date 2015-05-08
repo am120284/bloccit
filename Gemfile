@@ -78,6 +78,8 @@ group :development, :test do
 
   gem 'better_errors', '~> 2.1.1'
 
+  gem 'rspec-rails', '~> 3.0'
+
 
 end
 
