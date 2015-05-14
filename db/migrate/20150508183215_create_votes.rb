@@ -1,13 +1,13 @@
 class CreateVotes < ActiveRecord::Migration
   def change
-    create_table :votes do |t|
-      t.integer :value
-      t.integer :user_id
-      t.integer :post_id
+    create_table   :votes do |t|
+      t.integer    :value
+      t.integer    :user_id
+      t.integer    :post_id
       t.references :user, index: true
       t.references :post, index: true
 
-      t.timestamps null: false
+      t.timestamps  null: false
     end
     add_foreign_key :votes, :users
     add_foreign_key :votes, :posts
