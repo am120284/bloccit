@@ -15,6 +15,7 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 
+#gem 'spring', '~> 3.1.4'
 gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'

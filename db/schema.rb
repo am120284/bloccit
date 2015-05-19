@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511210020) do
+ActiveRecord::Schema.define(version: 20150519171453) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20150511210020) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -81,6 +91,7 @@ ActiveRecord::Schema.define(version: 20150511210020) do
     t.datetime "updated_at"
     t.string   "role",                   default: "member"
     t.string   "avatar"
+    t.boolean  "email_favorites",        default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
