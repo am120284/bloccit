@@ -4,4 +4,14 @@ class Comment < ActiveRecord::Base
 
   validates :body, length: { minimum: 5 }, presence: true
   validates :user, presence: true
+
+  after_create :send_favorite_emails
+
+  private
+
+  def send_favorite_emails
+    post.favorites.each do |fovorite|
+      FavoriteMailer.new_comment(favorite.user, post, self).delivery_now
+    end
+  end
 end
