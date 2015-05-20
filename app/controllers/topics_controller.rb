@@ -1,7 +1,8 @@
 class TopicsController < ApplicationController
+  #require 'will_paginate/array'
+
   def index
-  	 @topics = Topic.paginate(page: params[:page])
-  	 authorize @topics
+    @topics = (current_user.try(:topics) || Topic.privately_viewable).paginate(page: params[:page], per_page: 10)
   end
 
   def new
