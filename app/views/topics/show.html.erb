@@ -7,24 +7,9 @@
 <div class="row">
   <div class="col-md-8">
     <p class="lead"><%= @topic.description %></p>
-    <% @posts.each do |post| %>
-      <div class="media">
-        <%= render partial: 'votes/voter', locals: { post: post } %>
+    
+      <%= render @posts %>
 
-       <div class="media-body">
-         <h4 class="media-heading">
-             <%= link_to (post.title), [@topic, post] %>
-              <%= image_tag(post.image.profile.url) %>
-         </h4>
-          <small>
-             <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
-             submitted <%= time_ago_in_words(post.created_at) %> ago by
-             <%= post.user.name %><br>
-             <%= post.comments.count %> Comments
-           </small>
-       </div>
-      </div>
-    <% end %>
    </div>
    <div class="col-md-4">
      <% if policy(Post.new).create? %> <!--if policy allows user to create new Posts then...-->
