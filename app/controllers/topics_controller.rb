@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   #require 'will_paginate/array'
 
   def index
-    @topics = (current_user.try(:topics) || Topic.privately_viewable).paginate(page: params[:page], per_page: 10)
+    @topics = (current_user.try(:topics) || Topic.publicly_viewable).paginate(page: params[:page], per_page: 10)
   end
 
   def new
