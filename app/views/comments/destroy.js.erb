@@ -1,0 +1,7 @@
+<% if @comment.destroyed? %>
+  $('#comment-' +<%= @comment.id %>).fadeOut();
+  $('.js-comments-count').html("<%= pluralize(@comment.user.comments.count, 'comment') %>");
+
+<% else %>
+  $('#comment-' +<%= @comment.id %>).prepend("<div class='alert alert alert'><%= flash[:error] %></div>");
+<% end %>
