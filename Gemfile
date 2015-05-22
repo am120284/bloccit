@@ -14,6 +14,7 @@ gem 'redcarpet'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'newrelic_rpm', '~> 3.12.0.288'
 
 #gem 'spring', '~> 3.1.4'
 gem 'fog'
