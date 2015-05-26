@@ -18,12 +18,18 @@
 
      <h3><%= @comments.count %> Comments</h3>
 
-     <%= render partial: 'comments/comment', collection: @comments %>
+     <div class='js-comments'>
+       <%= render partial: 'comments/comment', collection: @comments %>
+     </div>
+
 
      <% if policy(Comment.new).create? %>
+
+     <div class='new-comment'>
          <h4>New Comment</h4>
          <%= render partial: 'comments/form', locals: {  post: @post, comment: @comment } %>
      <% end %>
+     </div>
 
    </div>
 

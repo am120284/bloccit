@@ -4,20 +4,25 @@ class CommentsController < ApplicationController
     @post     = Post.find(params[:post_id])
     @comments = @post.comments
 
-    #After separating the topics resources from the comments, Here in the Comments controller it cant find the topic
-    #figure out how to find the topic through the comments
-
     @comment      = current_user.comments.build(comment_params)
     @comment.post = @post
+    @new_comment = Comment.new
 
-    #authorize! :create, @comment, message: "You need be signed in to do that."
+    authorize @comment
+
     if @comment.save
       flash[:notice] = "Comment was created."
-      redirect_to topic_post_path @post.topic, @post
+      #redirect_to topic_post_path @post.topic, @post
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      render 'posts/show'
+      #render 'posts/show'
     end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def destroy
