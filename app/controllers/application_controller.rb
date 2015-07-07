@@ -14,6 +14,9 @@ class ApplicationController < ActionController::Base
      topics_path
    end
 
+   def hello
+     render text: "<h1>Hello</h1><p>Welcome home</p>"
+   end
    protected
  
    def configure_permitted_parameters
